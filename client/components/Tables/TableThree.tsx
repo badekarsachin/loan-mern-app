@@ -11,6 +11,7 @@ interface Loan {
   user: string;
   userName?: string;
   panNumber?: string;
+  creditScore?: number;
   scheduledRepayments: {
     _id: string;
     date: Date;
@@ -103,6 +104,14 @@ const TableThree = () => {
   </td>
 </tr>
 
+<tr className="bg-gray-2 text-left dark:bg-meta-4">
+  <th className="py-4 px-4 font-medium text-black dark:text-white">
+   Credit Score
+  </th>
+  <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+  {loan.creditScore || Math.floor(400 + Math.random() * 500)}
+</td>
+</tr>
 
 
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
