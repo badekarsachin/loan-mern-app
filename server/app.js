@@ -12,15 +12,14 @@ app.use("/api/users", userRoutes);
 app.use("/api/loans", loanRoutes);
 app.get("/", (req, res) => res.send(""));
 
-mongoose
-  .connect(process.env.MONGODB_SERVER_PORT, {
+mongoose.connect(process.env.MONGODB_SERVER_PORT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

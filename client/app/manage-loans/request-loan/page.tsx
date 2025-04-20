@@ -17,6 +17,7 @@ const RequestLoan = () => {
 
   // State to manage form input values
   const [loanAmount, setLoanAmount] = useState<number | "">("");
+  const [panNumber, setPanNumber] = useState("");
   const [term, setTerm] = useState<number | "">("");
   const [err, setErr] = useState("");
   // Function to handle form submission
@@ -38,6 +39,7 @@ const RequestLoan = () => {
     const requestBody = {
       loanAmount: Number(loanAmount), // Convert to a number
       term: Number(term), // Convert to a number
+      panNumber: panNumber, //
     };
     try {
       // Send the request to the server (e.g., via an API call)
@@ -125,6 +127,27 @@ const RequestLoan = () => {
                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   />
                 </div>
+
+                <div className="mb-4.5">
+  <label className="mb-2.5 block text-black dark:text-white">
+    PAN Number <span className="text-meta-1">*</span>
+  </label>
+  <input
+    type="text"
+    id="panNumber"
+    name="panNumber"
+    placeholder="Enter your PAN Number"
+    value={panNumber}
+    onChange={(e) => setPanNumber(e.target.value.toUpperCase())}
+    required
+    maxLength={10}
+    pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+    title="Format: 5 letters, 4 digits, 1 letter (e.g., ABCDE1234F)"
+    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+  />
+</div>
+
+
                 <p className="text-meta-1">{err}</p>
                 <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray">
                   Ask for Approval

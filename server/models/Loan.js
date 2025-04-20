@@ -10,6 +10,12 @@ const loanSchema = new Schema({
     type: Number,
     required: true,
   },
+  panNumber: {
+    type: String,
+    required: true, // or false if optional
+    // match: /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/,
+    // PAN number format validation
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
@@ -38,6 +44,7 @@ const loanSchema = new Schema({
     default: "PENDING",
   },
 });
+
 
 const Loan = mongoose.model("Loan", loanSchema);
 

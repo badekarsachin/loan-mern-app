@@ -10,6 +10,7 @@ interface Loan {
   term: number;
   user: string;
   userName?: string;
+  panNumber?: string;
   scheduledRepayments: {
     _id: string;
     date: Date;
@@ -92,6 +93,18 @@ const TableThree = () => {
                 {loan.userName || loan.user}
               </td>
             </tr>
+
+            <tr className="bg-gray-2 text-left dark:bg-meta-4">
+  <th className="py-4 px-4 font-medium text-black dark:text-white">
+    PAN Number
+  </th>
+  <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+    {loan.panNumber || "N/A"}
+  </td>
+</tr>
+
+
+
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
               <th className="py-4 px-4 font-medium text-black dark:text-white">
                 Status

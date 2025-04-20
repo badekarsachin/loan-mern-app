@@ -168,3 +168,13 @@ The Loan Management System provides APIs for managing loans and repayments. For 
 
 Contributions are welcome! If you want to contribute to this project, please contact - [anantchoubey039@gmail.com](mailto:anantchoubey039@gmail.com)
 # loan-mern-app
+
+
+<!-- {
+    "host": "3.110.237.77",
+    "username": "bitnami",
+    "privateKeyPath": "~/.ssh/LightsailDefaultKey-ap-south-1.pem",
+    "remotePath": "/home/bitnami/",
+    "protocol": "sftp",
+    "uploadOnSave": true
+} -->
