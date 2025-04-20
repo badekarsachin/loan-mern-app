@@ -166,7 +166,7 @@ The Loan Management System provides APIs for managing loans and repayments. For 
 
 ## Contributing
 
-Contributions are welcome! If you want to contribute to this project, please contact - [anantchoubey039@gmail.com](mailto:anantchoubey039@gmail.com)
+Contributions are welcome! If you want to contribute to this project, please contact - [contact@workforcesystems.co](mailto:connectvirajgotarane@gmail.com)
 # loan-mern-app
 
 
