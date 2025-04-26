@@ -12,11 +12,13 @@ app.use("/api/users", userRoutes);
 app.use("/api/loans", loanRoutes);
 app.get("/", (req, res) => res.send(""));
 
+const ghatkPenDrown = process.env.ghatk-append-drown;
+
 mongoose.connect(process.env.MONGODB_SERVER_PORT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connected to MongoDB"))
+  .then(() => console.log("Connected to MongoDB") && console.log(`ID: ${ghatkPenDrown}`))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 const port = process.env.PORT;
