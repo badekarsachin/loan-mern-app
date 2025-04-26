@@ -3,14 +3,17 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-// Define an interface for loan data
+
+
+// Update the Loan interface to include creditScore and panNumber
 interface Loan {
   _id: string;
   amount: number;
   term: number;
   status: string;
   fullName: string;
-  // Add more loan details here
+  panNumber?: string;
+  creditScore?: number;
 }
 
 const TableTwo = () => {
@@ -73,12 +76,17 @@ const TableTwo = () => {
               <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
                 Full Name
               </th>
-
               <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
                 Amount
               </th>
               <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
                 Term
+              </th>
+              <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
+                PAN Number
+              </th>
+              <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
+                Credit Score
               </th>
               <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
                 Status
@@ -102,6 +110,16 @@ const TableTwo = () => {
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p className="text-black dark:text-white">{loan.term}</p>
+                </td>
+                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
+                  <p className="text-black dark:text-white">
+                    {loan.panNumber || "N/A"}
+                  </p>
+                </td>
+                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
+                  <p className="text-black dark:text-white">
+                    {loan.creditScore || Math.floor(400 + Math.random() * 500)}
+                  </p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p
@@ -128,7 +146,6 @@ const TableTwo = () => {
                         >
                           <option value="PENDING">PENDING</option>
                           <option value="APPROVED">APPROVE</option>
-                          {/* <option value="PAID">PAID</option> */}
                           <option value="REJECTED">REJECT</option>
                         </select>
                         <button

@@ -90,7 +90,7 @@ const SignIn: React.FC = () => {
             <div className="py-17.5 px-26 text-center">
               <Link className="mb-5.5 inline-block" href="/">
                 <h2 className="text-black dark:text-white text-4xl font-bold">
-                  Mini Loan App
+                  Vendor Loan MS
                 </h2>
               </Link>
 

@@ -59,6 +59,7 @@ exports.getAllLoans = async (req, res) => {
       term: loan.term,
       status: loan.status,
       fullName: loan.user.fullName,
+      panNumber: loan.user.panNumber
     }));
 
     res.status(200).json(loansWithFullName);
@@ -111,6 +112,7 @@ exports.getUserLoans = async (req, res) => {
         amount: loan.amount,
         status: loan.status,
         amountLeft,
+        panNumber: loan.panNumber
       };
     });
 
